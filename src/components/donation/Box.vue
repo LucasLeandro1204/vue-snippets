@@ -9,8 +9,8 @@
     </div>
 
     <div class="wrapper">
-      <p><strong>14 days left</strong> to donate to this project</p>
-      <p>We have 14 donors who believe and support this project, every dollar helps.</p>
+      <p>This project <strong>{{ deadLine }}</strong> will end.</p>
+      <p>We have <strong v-text="donors"></strong> donors who believe and support this project, every dollar helps.</p>
       <div>
         <input type="text" v-model.number="donation">
         <span>$</span>
@@ -28,6 +28,8 @@
 <script>
   export default {
     props: {
+      deadLine: {},
+      total: Number,
       default: Number,
     },
 
@@ -40,6 +42,9 @@
     computed: {
       donations () {
         return this.$parent.donations;
+      },
+      donors () {
+        return this.donations.length;
       }
     },
 
@@ -56,7 +61,8 @@
     methods: {
       donate () {
         this.donations.push({
-
+          date: Date.now(),
+          value: this.donation,
         });
       }
     }

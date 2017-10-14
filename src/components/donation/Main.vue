@@ -1,10 +1,11 @@
 <template>
   <section>
-    <donation-box default="50"></donation-box>
+    <donation-box :default="50" :total="1500" :deadLine="deadLine"></donation-box>
   </section>
 </template>
 
 <script>
+  import Moment from 'moment';
   import DonationBox from './Box.vue';
   import DonationList from './List.vue';
 
@@ -16,6 +17,7 @@
 
     data () {
       return {
+        deadLine: Moment().add(14, 'minutes').fromNow(),
         donations: [
           { date: Date.now(), value: '1' },
           { date: Date.now(), value: '12' },
