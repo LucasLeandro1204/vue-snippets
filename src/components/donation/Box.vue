@@ -32,7 +32,7 @@
 
   $gray: #7d7d7d;
   $white: #FFFFFF;
-  $header: #3955c3;
+  $header: #7591ff;
   $daysleft: #e76322;
 
   article {
@@ -54,6 +54,10 @@
     border-radius: $radius;
     border-color: $white + -15%;
     background-color: $white + -5%;
+
+    &:hover {
+      background-color: $white + -10%;
+    }
   }
 
   .header,
@@ -103,7 +107,7 @@
     }
 
     p {
-      margin-bottom: .5rem;
+      margin-bottom: 1rem;
     }
 
     div {
@@ -127,6 +131,10 @@
       margin-left: .5rem;
       border-color: #2ecc71;
       background-color: #2ecc71;
+
+      &:hover {
+        background-color: #2ecc71 + 10%;
+      }
     }
 
     span {
