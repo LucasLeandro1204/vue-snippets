@@ -1,12 +1,7 @@
 <template>
   <section>
-    <article>
-      <donatation-box></donatation-box>
-    </article>
+    <donation-box></donation-box>
 
-    <article>
-      <donation-list></donation-list>
-    </article>
   </section>
 </template>
 
@@ -31,5 +26,9 @@
 <style lang="scss" scoped>
   section {
     display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
   }
 </style>

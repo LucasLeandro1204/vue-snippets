@@ -9,7 +9,7 @@
 
   export default {
     components: {
-      Donate,
+      Donation,
     },
 
     data () {
@@ -38,6 +38,10 @@
     &::before {
       box-sizing: border-box;
     }
+  }
+
+  body {
+    font-size: 16px;
   }
 
   main {
