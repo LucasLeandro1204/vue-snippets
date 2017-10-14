@@ -1,7 +1,6 @@
 <template>
   <section>
-    <donation-box></donation-box>
-
+    <donation-box default="50"></donation-box>
   </section>
 </template>
 
@@ -17,7 +16,12 @@
 
     data () {
       return {
-        donators: [],
+        donations: [
+          { date: Date.now(), value: '1' },
+          { date: Date.now(), value: '12' },
+          { date: Date.now(), value: '30' },
+          { date: Date.now(), value: '150' },
+        ],
       };
     },
   };

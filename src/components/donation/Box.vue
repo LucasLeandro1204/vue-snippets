@@ -12,9 +12,9 @@
       <p><strong>14 days left</strong> to donate to this project</p>
       <p>We have 14 donors who believe and support this project, every dollar helps.</p>
       <div>
-        <input type="text">
+        <input type="text" v-model.number="donation">
         <span>$</span>
-        <button @cick.prevent="">Contribute</button>
+        <button @cick.prevent="donate">Contribute</button>
       </div>
     </div>
 
@@ -24,6 +24,44 @@
     </div>
   </article>
 </template>
+
+<script>
+  export default {
+    props: {
+      default: Number,
+    },
+
+    data () {
+      return {
+        donation: this.default,
+      };
+    },
+
+    computed: {
+      donations () {
+        return this.$parent.donations;
+      }
+    },
+
+    watch: {
+      donation (value, oldValue) {
+        if (value === '' || value < 0) {
+          this.donation = 0;
+        } else if (/[^0-9]/.test(value)) {
+          this.donation = oldValue;
+        }
+      }
+    },
+
+    methods: {
+      donate () {
+        this.donations.push({
+
+        });
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   $py: 1rem;

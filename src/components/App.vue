@@ -24,7 +24,7 @@
     computed: {
       backgroundColor () {
         return this.colors[this.currentComponent];
-      }
+      },
     },
   }
 </script>
