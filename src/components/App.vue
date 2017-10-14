@@ -16,7 +16,7 @@
       return {
         currentComponent: 'donation',
         colors: {
-          donation: '#5B5E69',
+          donation: '#6585ff',
         }
       };
     },
