@@ -1,11 +1,11 @@
 <template>
-  <section id="component" :style="{ backgroundColor }">
+  <main :style="{ backgroundColor }">
     <component :is="currentComponent"></component>
-  </section>
+  </main>
 </template>
 
 <script>
-  import Donate from './donate/Main.vue';
+  import Donation from './donation/Main.vue';
 
   export default {
     components: {
@@ -14,9 +14,9 @@
 
     data () {
       return {
-        currentComponent: 'donate',
+        currentComponent: 'donation',
         colors: {
-          donate: '#ECF0F1',
+          donation: '#ECF0F1',
         }
       };
     },
@@ -40,11 +40,18 @@
     }
   }
 
-  #component {
+  main {
     display: flex;
     min-height: 100vh;
     padding: 50px 15px;
     align-items: center;
+    justify-content: center;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
     justify-content: center;
   }
 </style>
