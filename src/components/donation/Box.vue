@@ -4,7 +4,9 @@
       <p>We still need <strong>$153</strong> to beat this project</p>
     </div>
 
-    <div class="bar"></div>
+    <div class="bar">
+      <div></div>
+    </div>
 
     <div class="wrapper">
       <p><strong>14 days left</strong> to donate to this project</p>
@@ -27,9 +29,10 @@
   $px: 1rem;
   $radius: .25rem;
 
+  $gray: #7d7d7d;
   $white: #FFFFFF;
   $header: #5B5E69;
-  $daysleft: #FFF;
+  $daysleft: #e76322;
 
   article {
     line-height: 1.7;
@@ -49,32 +52,46 @@
     color: $white;
     position: relative;
     text-align: center;
+    margin-bottom: 1rem;
     border-radius: $radius;
-    background-color: $header;
-    border-bottom: 2px solid $header + -40%;
-
-    &::after,
-    &::before {
-      width: 10px;
-      content: '';
-      height: 15px;
-      bottom: -15px;
-      position: absolute;
-      background-color: $header + -40%;
-    }
-
-    &::before {
-      left: 30%;
-    }
+    // background-color: $header;
+    border-bottom: 2px solid $white;
 
     &::after {
-      right: 30%;
+      width: 0;
+      height: 0;
+      content: '';
+      right: 1rem;
+      bottom: -.6rem;
+      position: absolute;
+      border-style: solid;
+      border-width: .6rem .6rem 0 .6rem;
+      border-color: $white transparent transparent transparent;
+    }
+  }
+
+  .bar {
+    background-color: $white;
+
+    div {
+      width: 50%;
+      padding: .3rem 0;
+      background-color: #F0F;
     }
   }
 
   .wrapper {
+    color: $gray;
+    background-color: $white;
+    border: 1px solid $white + -15%;
+    border-radius: 0 0 $radius $radius;
+
     strong {
       color: $daysleft;
+    }
+
+    p {
+      margin-bottom: .5rem;
     }
   }
 </style> 
