@@ -1,11 +1,11 @@
 <template>
   <article>
     <div class="header">
-      <p>We still need <strong>$153</strong> to beat this project</p>
+      <p>We still need <strong>$ {{ needed }}</strong> to beat this project</p>
     </div>
 
     <div class="bar">
-      <div></div>
+      <div :style="{ width: remainPercent + '%' }"></div>
     </div>
 
     <div class="wrapper">
@@ -14,7 +14,7 @@
       <div>
         <input type="text" v-model.number="donation" @focus="show = true" @blur="show = false" @keydown="show = false">
         <span>$</span>
-        <button @cick.prevent="donate">Contribute</button>
+        <button @click.prevent="donate">Contribute</button>
         <transition name="fade">
           <ul v-show="show">
             <li :class="{ active: suggestion == donation }" v-for="suggestion in suggestions" @click.prevent="donation = suggestion">$ {{ suggestion }}</li>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="inputs">
-      <button>Why give $404?</button>
+      <button>Why give $ 404?</button>
       <button>Share this project</button>
     </div>
   </article>
@@ -32,6 +32,7 @@
 
 <script>
   import Store from './store.js';
+  import Tween from '@tweenjs/tween.js';
 
   export default {
     mixins: [Store],
@@ -52,6 +53,7 @@
       return {
         donation: this.default,
         show: false,
+        needed: 0,
       };
     },
 
@@ -62,7 +64,31 @@
         } else if (/[^0-9]/.test(value)) {
           this.donation = oldValue;
         }
+      },
+
+      donations () {
+        this.animateRemain();
+
+        const animate = () => Tween.update() ? requestAnimationFrame(animate) : null;
+
+        animate();
       }
+    },
+
+    computed: {
+      remain () {
+        const remain = this.donations.reduce((remain, donation) => remain - donation.value, this.total);
+
+        return remain <= 0 ? 0 : remain;
+      },
+
+      remainPercent () {
+        return 100 - (this.remain * 100 / this.total);
+      }
+    },
+
+    created () {
+      this.needed = this.remain;
     },
 
     methods: {
@@ -71,6 +97,14 @@
           date: Date.now(),
           value: this.donation,
         });
+      },
+
+      animateRemain () {
+        new Tween.Tween({ tweeningNumber: this.needed })
+          .easing(Tween.Easing.Quadratic.Out)
+          .to({ tweeningNumber: this.remain }, 500)
+          .onUpdate(to => this.needed = to.tweeningNumber.toFixed(0))
+          .start();
       }
     }
   }
@@ -143,8 +177,8 @@
     background-color: $white;
 
     div {
-      width: 50%;
       padding: .3rem 0;
+      transition: all .3s;
       background-color: #F0F;
     }
   }
