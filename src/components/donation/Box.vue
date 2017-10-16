@@ -5,7 +5,7 @@
     </div>
 
     <div class="bar">
-      <div :style="{ width: remainPercent + '%' }"></div>
+      <div :style="{ width: remainPercent + '%', 'background-color': barBackground }"></div>
     </div>
 
     <div class="wrapper">
@@ -84,6 +84,13 @@
 
       remainPercent () {
         return 100 - (this.remain * 100 / this.total);
+      },
+
+      barBackground () {
+        const r = (2.5 * (100 - this.remainPercent)).toFixed(0);
+        const b = (2.5 * this.remainPercent).toFixed(0);
+
+        return `rgb(${r}, ${b}, 0)`;
       }
     },
 
@@ -101,10 +108,12 @@
 
       animateRemain () {
         new Tween.Tween({ tweeningNumber: this.needed })
-          .easing(Tween.Easing.Quadratic.Out)
-          .to({ tweeningNumber: this.remain }, 500)
+          .easing(Tween.Easing.Exponential.Out)
+          .to({ tweeningNumber: this.remain }, 1000)
           .onUpdate(to => this.needed = to.tweeningNumber.toFixed(0))
           .start();
+
+          console.log(Tween);
       }
     }
   }
@@ -137,9 +146,9 @@
     color: $gray;
     cursor: pointer;
     font-weight: 700;
-    border: 2px solid $white + -15%;
     border-radius: $radius;
     background-color: $white + -5%;
+    border: 2px solid $white + -15%;
 
     &:hover {
       background-color: $white + -10%;
@@ -178,8 +187,8 @@
 
     div {
       padding: .3rem 0;
-      transition: all .3s;
-      background-color: #F0F;
+      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    //  background-color: #2ecc71;
     }
   }
 
@@ -283,7 +292,7 @@
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: all .3s;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .fade-enter, .fade-leave-to {
