@@ -17,7 +17,7 @@
 
     data () {
       return {
-        deadLine: Moment().add(14, 'minutes').fromNow(),
+        deadLine: Moment().add(15, 'days').endOf('day').fromNow('dd'), // drop add latter
         donations: [
           { date: Date.now(), value: '1' },
           { date: Date.now(), value: '12' },

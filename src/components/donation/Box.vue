@@ -9,7 +9,7 @@
     </div>
 
     <div class="wrapper">
-      <p>This project <strong>{{ deadLine }}</strong> will end.</p>
+      <p>There's <strong>{{ deadLine }} left</strong> to help this project.</p>
       <p>We have <strong v-text="donors"></strong> donors who believe and support this project, every dollar helps.</p>
       <div>
         <input type="text" v-model.number="donation">
