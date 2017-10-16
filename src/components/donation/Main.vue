@@ -1,6 +1,7 @@
 <template>
   <section>
     <donation-box :default="50" :total="1500" :deadLine="deadLine"></donation-box>
+    <donation-list></donation-list>
   </section>
 </template>
 

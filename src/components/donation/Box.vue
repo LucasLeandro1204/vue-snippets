@@ -26,7 +26,11 @@
 </template>
 
 <script>
+  import Store from './store.js';
+
   export default {
+    mixins: [Store],
+
     props: {
       deadLine: {},
       total: Number,
@@ -37,15 +41,6 @@
       return {
         donation: this.default,
       };
-    },
-
-    computed: {
-      donations () {
-        return this.$parent.donations;
-      },
-      donors () {
-        return this.donations.length;
-      }
     },
 
     watch: {
