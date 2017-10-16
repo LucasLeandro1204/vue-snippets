@@ -35,7 +35,7 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1280px;
-    justify-content: center;
+    justify-content: space-between;
     font-family: 'Ubuntu', sans-serif;
   }
 </style>
