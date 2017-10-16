@@ -12,9 +12,14 @@
       <p>There's <strong>{{ deadLine }} left</strong> to help this project.</p>
       <p>We have <strong v-text="donors"></strong> donors who believe and support this project, every dollar helps.</p>
       <div>
-        <input type="text" v-model.number="donation">
+        <input type="text" v-model.number="donation" @focus="show = true" @blur="show = false" @keydown="show = false">
         <span>$</span>
         <button @cick.prevent="donate">Contribute</button>
+        <transition name="fade">
+          <ul v-show="show">
+            <li :class="{ active: suggestion == donation }" v-for="suggestion in suggestions" @click.prevent="donation = suggestion">$ {{ suggestion }}</li>
+          </ul> 
+        </transition>
       </div>
     </div>
 
@@ -35,11 +40,18 @@
       deadLine: {},
       total: Number,
       default: Number,
+      suggestions: {
+        type: Array,
+        default: () => ([
+          15, 25, 50, 150,
+        ]),
+      },
     },
 
     data () {
       return {
         donation: this.default,
+        show: false,
       };
     },
 
@@ -71,6 +83,7 @@
 
   $gray: #7d7d7d;
   $white: #FFFFFF;
+  $black: #000000;
   $header: #7591ff;
   $daysleft: #e76322;
 
@@ -90,9 +103,8 @@
     color: $gray;
     cursor: pointer;
     font-weight: 700;
-    border: 2px solid;
+    border: 2px solid $white + -15%;
     border-radius: $radius;
-    border-color: $white + -15%;
     background-color: $white + -5%;
 
     &:hover {
@@ -162,8 +174,8 @@
     }
 
     input {
-      margin-right: .5rem;
       padding-left: 2rem;
+      margin-right: .5rem;
     }
 
     button {
@@ -185,6 +197,40 @@
     }
   }
 
+  ul {
+    top: 57px;
+    padding: 0;
+    width: 50%;
+    list-style: none;
+    position: absolute;
+    border-radius: $radius;
+    background-color: $white;
+    border: 2px solid $white + -15%;
+    box-shadow: 3px 3px 6px 1px rgba($black, .2);
+
+    li {
+      cursor: pointer;
+      padding: 5px 15px;
+
+      &:hover,
+      &.active {
+        background-color: $white + -10%;
+      }
+    }
+
+    &::after {
+      width: 0;
+      height: 0;
+      left: .3rem;
+      content: '';
+      top: -.6rem;
+      position: absolute;
+      border-style: solid;
+      border-width: 0 .6rem .6rem .6rem;
+      border-color: transparent transparent $white + -15% transparent;
+    }
+  }
+
   .inputs {
     display: flex;
 
@@ -200,5 +246,14 @@
         margin-left: .5rem;
       }
     }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all .3s;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(5px);
   }
 </style> 
