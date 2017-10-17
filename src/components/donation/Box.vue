@@ -24,7 +24,7 @@
     </div>
 
     <div class="inputs">
-      <button>Why give $ 404?</button>
+      <button>Why give $ {{ donation || 0 }}?</button>
       <button>Share this project</button>
     </div>
   </article>
@@ -59,7 +59,7 @@
 
     watch: {
       donation (value, oldValue) {
-        if (value === '' || value < 0) {
+        if (value < 0) {
           this.donation = 0;
         } else if (/[^0-9]/.test(value)) {
           this.donation = oldValue;
