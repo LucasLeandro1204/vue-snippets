@@ -1,7 +1,7 @@
 <template>
   <article>
     <transition-group name="list" tag="ul">
-        <li :key="index" v-for="(donation, index) in donations">{{ donation.value }} <span></span></li>
+      <li :key="donation.id" v-for="donation in donations">{{ donation.value }}</li>
     </transition-group>
   </article>
 </template>
@@ -12,28 +12,6 @@
 
   export default {
     mixins: [Store],
-
-    computed: {
-      donationsChunkByYear () {
-        return this.donations.reduce((donations, donation) => {
-          const year = Moment(donation.date).format('Y');
-
-          if (! donations[year]) {
-            donations[year] = [];
-          }
-
-          donations[year].push(donation);
-
-          return donations;
-        }, {});
-      },
-
-      donationsAsArray () {
-        return Object.keys(this.donationsChunkByYear)
-          .sort((a, b) => b - a) // We have to order this shit again.
-          .map((date) => this.donationsChunkByYear[date]);
-      }
-    },
   }
 </script>
 
@@ -45,5 +23,18 @@
   ul {
     padding: 0;
     list-style: none;
+  }
+
+   li {
+    transition: all 1s;
+  }
+
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  .list-leave-active {
+    position: absolute;
   }
 </style>
