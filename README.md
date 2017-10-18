@@ -2,15 +2,32 @@
 
 Vue projects with simple designs yet powerful features.
 
-## Build Setup
+## Components
 
-``` bash
-# install dependencies
-npm install
+TODO
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Development and building
 
-# build for production with minification
-npm run build
-```
+#### Getting started
+
+TODO
+
+### Development
+
+TODO
+
+### Deployment
+
+TODO
+
+## Liniting
+
+TODO
+
+## Authors
+
+TODO
+
+## License
+
+TODO
