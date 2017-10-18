@@ -34,6 +34,12 @@
   import Store from './store.js';
   import Tween from '@tweenjs/tween.js';
 
+  const donation = (value, lastDonations) => ({
+    value,
+    date: Date.now(),
+    id: lastDonations.reduce((lastID, donation) => lastID < donation.id ? lastID : donation.id, 0),
+  });
+
   export default {
     mixins: [Store],
 
@@ -100,10 +106,7 @@
 
     methods: {
       donate () {
-        this.donations.push({
-          date: Date.now(),
-          value: this.donation,
-        });
+        this.donations.unshift(donation(this.donation, this.donations));
       },
 
       animateRemain () {
