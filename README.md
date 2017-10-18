@@ -1,16 +1,51 @@
 # Vue Snippets
 
-> A Vue project with simple but nice components.
+Vue projects with simple designs yet powerful features.
 
-## Build Setup
+## Components
 
-``` bash
-# install dependencies
-npm install
+| Component name | Description                        | Path                                               |
+|----------------|------------------------------------|----------------------------------------------------|
+| Donation box   | A simple, clean donation component | [src/components/donation](src/components/donation) |
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Development and building
 
-# build for production with minification
-npm run build
-```
+#### Getting started
+
+To start, download and install the package manager for nodejs `npm`. This is
+used to download and install dependencies used to compile vue files. These
+dependencies can be downloaded and installed using
+
+	npm install
+    
+
+### Development
+
+To build and run for development use the following:
+
+	npm run dev
+    
+This will host the application at `localhost:8080`
+
+### Deployment
+
+To build for production, use the following command:
+
+	npm run build
+    
+The above command also features minification to help reduce file size
+
+## Liniting
+
+Something to look into?
+
+## Authors
+
+| Name             | Github profile                                          | Location      |
+|------------------|---------------------------------------------------------|---------------|
+| LucasLeandro1204 | [LucasLeandro1204](https://github.com/LucasLeandro1204) | Brazil        |
+
+## License
+
+This project is licensed under the MIT license. See the LICENSE.md file for more details
+
