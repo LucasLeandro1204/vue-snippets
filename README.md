@@ -1,6 +1,6 @@
 # Vue Snippets
 
-> A Vue project with simple but nice components.
+Vue projects with simple designs yet powerful features.
 
 ## Build Setup
 
