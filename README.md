@@ -14,15 +14,28 @@ Components i have created:
 
 #### Getting started
 
-TODO
+To start, download and install the package manager for nodejs `npm`. This is
+used to download and install dependencies used to compile vue files. These
+dependencies can be downloaded and installed using
+
+	npm install
+    
 
 ### Development
 
-TODO
+To build and run for development use the following:
+
+	npm run dev
+    
+This will host the application at `localhost:8080`
 
 ### Deployment
 
-TODO
+To build for production, use the following command:
+
+	npm run build
+    
+The above command also features minification to help reduce file size
 
 ## Liniting
 
