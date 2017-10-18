@@ -43,8 +43,9 @@ Something to look into?
 
 ## Authors
 
-- LucasLeandro1204
-	- Founder - *Developer and designer*
+| Name             | Github profile                                  | Location      |
+|------------------|-------------------------------------------------|---------------|
+| LucasLeandro1204 | [LucasLeandro1204](github.com/LucasLeandro1204) | Brazil        |
 
 ## License
 
