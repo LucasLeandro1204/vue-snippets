@@ -129,6 +129,7 @@
   $daysleft: #e76322;
 
   article {
+    width: 100%;
     padding: 0 15px;
     max-width: 390px;
     line-height: 1.7;
