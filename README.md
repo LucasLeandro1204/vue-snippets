@@ -41,9 +41,9 @@ Something to look into?
 
 ## Authors
 
-| Name             | Github profile                                          | Location      |
-|------------------|---------------------------------------------------------|---------------|
-| LucasLeandro1204 | [LucasLeandro1204](https://github.com/LucasLeandro1204) | Brazil        |
+| Name  | Github profile                                          | Location               |
+|-------|---------------------------------------------------------|------------------------|
+| Lucas | [LucasLeandro1204](https://github.com/LucasLeandro1204) | Florianópolis - Brazil |
 
 ## License
 
