@@ -112,8 +112,6 @@
           .to({ tweeningNumber: this.remain }, 1000)
           .onUpdate(to => this.needed = to.tweeningNumber.toFixed(0))
           .start();
-
-          console.log(Tween);
       }
     }
   }
