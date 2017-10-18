@@ -26,8 +26,9 @@ TODO
 
 ## Authors
 
-TODO
+- LucasLeandro1204
+	- Founder - *Developer and designer*
 
 ## License
 
-TODO
+This project is licensed under the MIT license. See the LICENSE.md file for more details
