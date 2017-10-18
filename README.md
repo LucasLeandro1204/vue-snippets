@@ -4,9 +4,9 @@ Vue projects with simple designs yet powerful features.
 
 ## Components
 
-| Component name | Description                        | Location                  |
-|----------------|------------------------------------|---------------------------|
-| Donation box   | A simple, clean donation component | `src/components/donation` |
+| Component name | Description                        | Path                                               |
+|----------------|------------------------------------|----------------------------------------------------|
+| Donation box   | A simple, clean donation component | [src/components/donation](src/components/donation) |
 
 ## Development and building
 
