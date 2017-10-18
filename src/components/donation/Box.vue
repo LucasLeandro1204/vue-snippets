@@ -209,15 +209,21 @@
       position: relative;
     }
 
+    span,
     input,
     button {
       font-size: 1.4rem;
+    }
+
+    input,
+    button {
       padding: .5rem $px;
     }
 
     input {
       padding-left: 2rem;
       margin-right: .5rem;
+      padding-right: 2rem;
     }
 
     button {
@@ -234,7 +240,6 @@
     span {
       left: .7rem;
       top: .125rem;
-      font-size: 1.4rem;
       position: absolute;
     }
   }
@@ -297,5 +302,28 @@
   .fade-enter, .fade-leave-to {
     opacity: 0;
     transform: translateY(5px);
+  }
+
+  @media screen and (max-width: 540px) {
+    article {
+      margin: 0 auto;
+    }
+
+    .wrapper {
+      span,
+      input,
+      button {
+        font-size: 1.1rem;
+      }
+    }
+
+    .inputs {
+      flex-wrap: wrap;
+
+      button {
+        width: 100%;
+        margin: 0 0 .5rem !important;
+      }
+    }
   }
 </style> 
