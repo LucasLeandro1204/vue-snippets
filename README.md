@@ -39,7 +39,7 @@ The above command also features minification to help reduce file size
 
 ## Liniting
 
-TODO
+Something to look into?
 
 ## Authors
 
