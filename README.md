@@ -4,8 +4,6 @@ Vue projects with simple designs yet powerful features.
 
 ## Components
 
-Components i have created:
-
 | Component name | Description                        | Location                  |
 |----------------|------------------------------------|---------------------------|
 | Donation box   | A simple, clean donation component | `src/components/donation` |
