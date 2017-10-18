@@ -34,10 +34,10 @@
   import Store from './store.js';
   import Tween from '@tweenjs/tween.js';
 
-  const donation = (value, lastDonations) => ({
+  const donationFactory = (value, lastDonations) => ({
     value,
     date: Date.now(),
-    id: lastDonations.reduce((lastID, donation) => lastID < donation.id ? lastID : donation.id, 0),
+    id: lastDonations.reduce((lastID, donation) => lastID > donation.id ? lastID : donation.id, 0) + 1,
   });
 
   export default {
@@ -106,7 +106,7 @@
 
     methods: {
       donate () {
-        this.donations.unshift(donation(this.donation, this.donations));
+        this.donations.unshift(donationFactory(this.donation, this.donations));
       },
 
       animateRemain () {
@@ -125,6 +125,8 @@
   $px: 1rem;
   $radius: .25rem;
 
+  $background: #6585ff;
+
   $gray: #7d7d7d;
   $white: #FFFFFF;
   $black: #000000;
@@ -134,7 +136,7 @@
   article {
     width: 100%;
     padding: 0 15px;
-    max-width: 390px;
+    max-width: 380px;
     line-height: 1.7;
   }
 
@@ -316,7 +318,16 @@
       span,
       input,
       button {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      input {
+        padding-top: .5rem;
+        padding-bottom: .4rem;
+      }
+
+      span {
+        top: .3rem;
       }
     }
 

@@ -53,6 +53,7 @@
   }
 
   section {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     max-width: 1280px;

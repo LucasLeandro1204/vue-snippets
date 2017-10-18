@@ -1,14 +1,12 @@
 <template>
   <section>
     <donation-box :default="50" :total="1500" :deadLine="deadLine"></donation-box>
-    <donation-list></donation-list>
   </section>
 </template>
 
 <script>
   import Moment from 'moment';
   import DonationBox from './Box.vue';
-  import DonationList from './List.vue';
 
   const donations = [
     { id: 3, date: Moment('20170613').format(), value: '400' },
@@ -22,7 +20,6 @@
   export default {
     components: {
       DonationBox,
-      DonationList,
     },
 
     created () {
@@ -48,7 +45,6 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1280px;
-    justify-content: space-between;
     font-family: 'Ubuntu', sans-serif;
   }
 </style>
