@@ -8,4 +8,5 @@ import App from './components/App.vue';
 
 import './core/filters.js';
 
+// eslint-disable-next-line
 window.app = new Vue(App).$mount('#app');
