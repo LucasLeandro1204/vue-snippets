@@ -35,7 +35,7 @@ To build for production, use the following command:
     
 The above command also features minification to help reduce file size
 
-## Liniting
+## Linting
 
 Something to look into?
 
