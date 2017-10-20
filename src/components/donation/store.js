@@ -3,9 +3,9 @@ export default {
     donations () {
       return this.$parent.donations;
     },
-    
+
     donors () {
       return this.donations.length;
-    }
+    },
   },
 };
