@@ -1,11 +1,11 @@
 export default {
   computed: {
-    donations () {
+    donations() {
       return this.$parent.donations;
     },
-    
-    donors () {
+
+    donors() {
       return this.donations.length;
-    }
+    },
   },
 };
