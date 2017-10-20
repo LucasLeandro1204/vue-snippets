@@ -31,13 +31,15 @@
 </template>
 
 <script>
-  import Store from './store.js';
+  import Store from './store';
   import Tween from '@tweenjs/tween.js';
+
+  const _lastId = (lastID, donation) => (lastID > donation.id ? lastID : donation.id);
 
   const donationFactory = (value, lastDonations) => ({
     value,
     date: Date.now(),
-    id: lastDonations.reduce((lastID, donation) => lastID > donation.id ? lastID : donation.id, 0) + 1,
+    id: lastDonations.reduce(_lastId, 0) + 1,
   });
 
   export default {
@@ -75,21 +77,23 @@
       donations () {
         this.animateRemain();
 
-        const animate = () => Tween.update() ? requestAnimationFrame(animate) : null;
+        const animate = () => (
+          Tween.update() ? requestAnimationFrame(animate) : null
+        );
 
         animate();
-      }
+      },
     },
 
     computed: {
       remain () {
-        const remain = this.donations.reduce((remain, donation) => remain - donation.value, this.total);
+        const r = this.donations.reduce((remain, donation) => remain - donation.value, this.total);
 
-        return remain <= 0 ? 0 : remain;
+        return r <= 0 ? 0 : r;
       },
 
       remainPercent () {
-        return 100 - (this.remain * 100 / this.total);
+        return 100 - ((this.remain * 100) / this.total);
       },
 
       barBackground () {
@@ -97,7 +101,7 @@
         const b = (2.5 * this.remainPercent).toFixed(0);
 
         return `rgb(${r}, ${b}, 0)`;
-      }
+      },
     },
 
     created () {
@@ -113,11 +117,13 @@
         new Tween.Tween({ tweeningNumber: this.needed })
           .easing(Tween.Easing.Exponential.Out)
           .to({ tweeningNumber: this.remain }, 1000)
-          .onUpdate(to => this.needed = to.tweeningNumber.toFixed(0))
+          .onUpdate((to) => {
+            this.needed = to.tweeningNumber.toFixed(0);
+          })
           .start();
-      }
-    }
-  }
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

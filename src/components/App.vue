@@ -17,7 +17,7 @@
         currentComponent: 'donation',
         colors: {
           donation: '#6585ff',
-        }
+        },
       };
     },
 
@@ -26,7 +26,7 @@
         return this.colors[this.currentComponent];
       },
     },
-  }
+  };
 </script>
 
 <style lang="scss">
