@@ -27,7 +27,7 @@
        * Simulate an API request.
        */
       setTimeout(() => {
-        this.donations = donations.sort((a, b) => Moment(b.date).diff(Moment(a.date))); 
+        this.donations = donations.sort((a, b) => Moment(b.date).diff(Moment(a.date)));
       }, 1500);
     },
 
