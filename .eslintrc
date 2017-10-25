@@ -5,12 +5,22 @@
   "extends": "airbnb",
   "rules": {
     "import/first": 0,
-    "max-len": ["error", 120],
+    "max-len": [
+      "error",
+      120
+    ],
     "no-underscore-dangle": 0,
-    "space-before-function-paren": ["error", "always"]
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ]
   },
-  "plugins": [ "html" ],
+  "plugins": [
+    "html"
+  ],
   "settings": {
-      "html/html-extensions": [".vue"],
+    "html/html-extensions": [
+      ".vue"
+    ],
   }
 }
