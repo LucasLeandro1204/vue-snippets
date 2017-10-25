@@ -16,14 +16,13 @@ To start, download and install the package manager for nodejs `npm`. This is
 used to download and install dependencies used to compile vue files. These
 dependencies can be downloaded and installed using
 
-	npm install
-    
+``$ npm install``
 
 ### Development
 
 To build and run for development use the following:
 
-	npm run dev
+``$ npm run dev``
     
 This will host the application at `localhost:8080`
 
@@ -31,13 +30,17 @@ This will host the application at `localhost:8080`
 
 To build for production, use the following command:
 
-	npm run build
+``$ npm run build``
     
 The above command also features minification to help reduce file size
 
-## Linting
+#### Linting
 
-Something to look into?
+``$ npm run lint``
+
+To automatically fix the problems, run
+
+``$ npm run lint:fix``
 
 ## Authors
 
