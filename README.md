@@ -2,6 +2,8 @@
 
 Vue projects with simple designs yet powerful features.
 
+![](https://media.giphy.com/media/3ov9jGqHZCKnXNqHba/giphy.gif)
+
 ## Components
 
 | Component name | Description                        | Path                                               |
