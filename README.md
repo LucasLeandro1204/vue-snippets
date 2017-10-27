@@ -2,7 +2,7 @@
 
 Vue projects with simple designs yet powerful features.
  
-+![](https://media.giphy.com/media/3o7aCQmc5l4OaaaTLO/giphy.gif)
++![](https://github.com/LucasLeandro1204/vue-snippets/raw/master/static/readmegif.gif)
 +
 
 ## Components
