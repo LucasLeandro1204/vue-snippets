@@ -1,6 +1,9 @@
 # Vue Snippets
 
 Vue projects with simple designs yet powerful features.
+ 
++![](https://media.giphy.com/media/3o7aCQmc5l4OaaaTLO/giphy.gif)
++
 
 ## Components
 
