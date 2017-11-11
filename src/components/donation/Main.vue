@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <div id="box-wrapper">
     <donation-box :default="50" :total="1500" :deadLine="deadLine"></donation-box>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -41,10 +41,10 @@
 </script>
 
 <style lang="scss" scoped>
-  section {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1280px;
-    font-family: 'Ubuntu', sans-serif;
+  #box-wrapper {
+    padding: 15px;
+    max-width: 380px;
+    background-color: #607dee;
+    font-family: 'Ubuntu', sans-serif !important;
   }
 </style>

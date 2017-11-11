@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <div id="wrapper">
     <div class="header">
       <p>We still need <strong>$ {{ needed }}</strong> to beat this project</p>
     </div>
@@ -27,7 +27,7 @@
       <button>Why give $ {{ donation || 0 }}?</button>
       <button>Share this project</button>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -139,10 +139,10 @@
   $header: #7591ff;
   $daysleft: #e76322;
 
-  article {
+  #wrapper {
+    padding: 0;
     width: 100%;
-    padding: 0 15px;
-    max-width: 380px;
+    max-width: 350px;
     line-height: 1.7;
   }
 
@@ -178,6 +178,10 @@
     border-radius: $radius;
     background-color: $header;
     // border-bottom: 2px solid $white;
+
+    strong {
+      color: $white;
+    }
 
     &::after {
       width: 0;
@@ -256,7 +260,7 @@
   }
 
   ul {
-    top: 57px;
+    top: 44px;
     padding: 0;
     width: 50%;
     list-style: none;
@@ -316,7 +320,7 @@
   }
 
   @media screen and (max-width: 540px) {
-    article {
+    #wrapper {
       margin: 0 auto;
     }
 

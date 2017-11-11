@@ -1,8 +1,12 @@
 # Vue Snippets
 
-Vue projects with simple designs yet powerful features.
+Vue components with simple designs yet powerful features.
  
-![](https://github.com/LucasLeandro1204/vue-snippets/raw/master/static/readmegif.gif)
+![](static/donation.gif)
+
+# Documentation & Examples
+
+Documentation with all components is available at [HERE](https://lucasleandro1204.github.io/vue-snippets)
 
 ## Development
 
