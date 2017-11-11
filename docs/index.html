@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109495192-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-109495192-1');
-  </script>
-
   <meta charset="UTF-8">
   <title>Vue snippets - A Vue project with simple but nice components.</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -25,10 +16,18 @@
     window.$docsify = {
       loadSidebar: true,
       name: 'Vue snippets',
-      repo: 'LucasLeandro1204/vue-snippets'
+      repo: 'LucasLeandro1204/vue-snippets',
+      ga: 'UA-109495192-1',
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No Results.',
+      }
     }
   </script>
   <script src="assets/js/app.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
