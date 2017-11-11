@@ -1,3 +1,3 @@
 # Donation
 
-<snippet-donation />
+<snippet-donation></snippet-donation>

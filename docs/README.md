@@ -2,7 +2,7 @@
 
 Vue components with simple designs yet powerful features.
 
-<snippet-random />
+<snippet-random></snippet-random>
 
 ## Disclaimer
 
